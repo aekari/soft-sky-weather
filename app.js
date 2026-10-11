@@ -37,7 +37,11 @@ function request(url, cb){
     done(null,parsed,false);
    }else if(x.status){done('Weather service returned HTTP '+x.status+'. Please retry.',null,x.status>=500);}
   }
-  x.open('GET',url,true);x.timeout=45000;
+  /* A fresh URL avoids reusing a failed cached CORS response. Accept is a
+     CORS-safelisted header; no custom headers or credentials are added. */
+  var fresh=attempt>1&&url.indexOf('https://api.open-meteo.com/v1/forecast?')===0;
+  x.open('GET',fresh?url+'&_softsky='+Date.now():url,true);x.timeout=45000;
+  if(fresh){x.setRequestHeader('Accept','application/json');}
   x.onreadystatechange=complete;x.onload=function(){complete();if(!settled&&x.status===0){done('The browser could not complete the request (network or browser security). Open Connection help in Settings.',null,true);}};
   x.onerror=function(){done('The browser could not complete the request (network or browser security). Open Connection help in Settings.',null,true);};
   x.ontimeout=function(){done('The service did not respond within 45 seconds. Please retry.',null,true);};
@@ -122,7 +126,7 @@ function updateSky(){
 }
 function connectionHelp(){
  openDialog('Connection help');var box=$('dialog-content');
- var diagnosticLink=el('a','connection-link','Run an in-page connection check');diagnosticLink.href='diagnostics.html?v=4';box.appendChild(diagnosticLink);box.appendChild(el('p','','If this page opens but city search or weather fails, Safari may be unable to verify the weather service’s HTTPS certificate. WPA Wi-Fi and HTTPS certificate trust are separate.'));
+ var diagnosticLink=el('a','connection-link','Run an in-page connection check');diagnosticLink.href='diagnostics.html?v=5';box.appendChild(diagnosticLink);box.appendChild(el('p','','This check compares the website, city search, and weather requests. A network error can have several causes; it does not mean your Wi-Fi settings need changing. All requests use HTTPS.'));
  box.appendChild(el('p','','Check that the iPad’s date and time are correct. Then open the tests below. Text or JSON means the service can be reached; a certificate or secure-connection warning identifies a problem outside the page’s JavaScript.'));
  [['Test city search','https://geocoding-api.open-meteo.com/v1/search?name=London&count=1'],['Test weather','https://api.open-meteo.com/v1/forecast?latitude=0&longitude=0&current=temperature_2m']].forEach(function(a){var link=el('a','connection-link',a[0]);link.href=a[1];link.target='_blank';link.rel='noopener noreferrer';box.appendChild(link);});
  box.appendChild(el('p','note','These tests use public example locations, not your saved city. Do not bypass certificate warnings or switch to HTTP. A certificate-trust failure needs a verified device trust update or a weather relay with a certificate the iPad already trusts.'));

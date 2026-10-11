@@ -33,3 +33,11 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Both APIs returned Access-Control-Allow-Origin: * during inspection. The user's direct city-search test loaded JSON, so a certificate failure on that host is not established. Forecast-host testing on the physical iPad remains pending.
 
 - The user also confirmed the minimal forecast URL opens directly on the iPad. A separate in-page diagnostic now tests same-origin, city search, small forecast and full forecast requests; a successful direct navigation does not prove cross-origin XHR works. Root cause is still pending device-side diagnostic output.
+
+## Safari request compatibility investigation
+
+- Physical-device report: same-origin and city-search XHR pass; both small and full forecast XHR fail with status 0, although direct forecast navigation displays JSON. The cause is not established.
+- Forecast retries now use a fresh URL and the CORS-safelisted `Accept: application/json` header. This is a candidate workaround, not a verified device fix. HTTPS, host restrictions, and certificate validation are unchanged.
+- Diagnostic version 5 compares ordinary, uncached, explicit JSON, plain-text decoding, and full-forecast requests. It validates JSON and summarizes passing checks. No personal settings are accessed.
+- 30 regression checks pass; application and diagnostics parse as ES5. The server accepts the fresh-request parameter with HTTP 200 and the intended CORS headers.
+- No relay or additional hosting has been deployed. Physical-device verification remains required.
