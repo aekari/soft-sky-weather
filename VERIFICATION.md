@@ -31,3 +31,5 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Both application and bundled timezone scripts parse as ES5.
 - Verified the geocoding ID lookup returns an IANA timezone for saved-city migration.
 - Both APIs returned Access-Control-Allow-Origin: * during inspection. The user's direct city-search test loaded JSON, so a certificate failure on that host is not established. Forecast-host testing on the physical iPad remains pending.
+
+- The user also confirmed the minimal forecast URL opens directly on the iPad. A separate in-page diagnostic now tests same-origin, city search, small forecast and full forecast requests; a successful direct navigation does not prove cross-origin XHR works. Root cause is still pending device-side diagnostic output.

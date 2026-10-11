@@ -26,3 +26,4 @@ main{min-height:calc(100vh - 235px)}
 @keyframes cloud-drift-back{from{transform:translateX(12px)}to{transform:translateX(-12px)}}
 .connection-link{display:block;padding:14px 0;color:#294c70;font-weight:600}
 @media(prefers-reduced-motion:reduce){#main{transition:none}#main.page-arriving,.animate .hero-cloud{-webkit-animation:none;animation:none}}
+.diagnostic-row{display:block}.diagnostic-row p{font-size:13px;margin:8px 0;word-wrap:break-word}
