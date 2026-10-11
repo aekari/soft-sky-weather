@@ -124,10 +124,10 @@ function updateSky(){
  if(marker&&pos){marker.setAttribute('cx',40+520*pos.progress);marker.setAttribute('cy',205-670*pos.progress*(1-pos.progress));marker.setAttribute('fill',day?'#f5ce6c':'#c4d2e8');}
  if(remaining){remaining.textContent=num(set)&&num(rise)?duration(Math.max(0,set-Math.max(rise,now))):'—';}
 }
-function connectionCheckLink(){var link=el('a','connection-link','Connection check');link.href='diagnostics.html?v=6';return link;}
+function connectionCheckLink(){var link=el('a','connection-link','Connection check');link.href='diagnostics.html?v=7';return link;}
 function connectionHelp(){
  openDialog('Connection help');var box=$('dialog-content');
- var diagnosticLink=el('a','connection-link','Run an in-page connection check');diagnosticLink.href='diagnostics.html?v=6';box.appendChild(diagnosticLink);box.appendChild(el('p','','This check compares the website, city search, and weather requests. A network error can have several causes; it does not mean your Wi-Fi settings need changing. All requests use HTTPS.'));
+ var diagnosticLink=el('a','connection-link','Run an in-page connection check');diagnosticLink.href='diagnostics.html?v=7';box.appendChild(diagnosticLink);box.appendChild(el('p','','This check compares the website, city search, and weather requests. A network error can have several causes; it does not mean your Wi-Fi settings need changing. All requests use HTTPS.'));
  box.appendChild(el('p','','Check that the iPad’s date and time are correct. Then open the tests below. Text or JSON means the service can be reached; a certificate or secure-connection warning identifies a problem outside the page’s JavaScript.'));
  [['Test city search','https://geocoding-api.open-meteo.com/v1/search?name=London&count=1'],['Test weather','https://api.open-meteo.com/v1/forecast?latitude=0&longitude=0&current=temperature_2m']].forEach(function(a){var link=el('a','connection-link',a[0]);link.href=a[1];link.target='_blank';link.rel='noopener noreferrer';box.appendChild(link);});
  box.appendChild(el('p','note','These tests use public example locations, not your saved city. Do not bypass certificate warnings or switch to HTTP. A certificate-trust failure needs a verified device trust update or a weather relay with a certificate the iPad already trusts.'));
