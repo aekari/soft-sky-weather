@@ -36,3 +36,13 @@ Serve the directory using a static server, for example `python3 -m http.server 8
 Run `node tests/test.js` for logic, error, storage, navigation and late-response checks. Tests use synthetic locations and synthetic weather, not user preferences. The test runner needs Node; the website does not.
 
 Publish the root of the main branch using GitHub Pages and enable Enforce HTTPS. No secrets or deployment credentials belong in the repository.
+
+## Motion and daylight
+
+Page changes fade out for 180 ms and fade in for 320 ms. Turn this off with **Fade between pages**. **Drifting clouds** controls slow, transform-only cloud motion; an existing saved animation preference is preserved. New installations enable it. The sun's position updates every ten seconds from the city's sunrise/sunset, and the Sun & sky marker keeps moving even when rotation is paused. This is a decorative daylight-progress arc, not a true azimuth or elevation calculation. At night the illustration changes to a moon; missing or polar sunrise/sunset data use a static fallback.
+
+## iOS 9 connection troubleshooting
+
+WPA Wi-Fi encryption and the browser's HTTPS certificate trust are separate. A visible page with failed API requests does not prove Wi-Fi is broken. Both Open-Meteo endpoints presented Let's Encrypt certificates when checked. [Let's Encrypt lists iOS 10+ for ISRG Root X1 trust](https://letsencrypt.org/docs/certificate-compatibility/), so stock iOS 9 may reject these services. This cannot be repaired by ES5 JavaScript or an animation change.
+
+Settings → Connection help includes two HTTPS tests with neutral example coordinates. Confirm the device's date/time, and report the exact Safari error without bypassing it. If certificate trust is the cause, options are a carefully verified official root-certificate update on the device or an HTTPS relay with a chain it already trusts. Neither has been configured by this site. No HTTP fallback, public third-party proxy, or certificate-validation bypass is used.

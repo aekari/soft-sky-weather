@@ -17,3 +17,10 @@ This environment does not contain an iOS 9.3.5 Safari device. Viewport testing a
 On the actual iPad, confirm the HTTPS page and both API services load without certificate warnings; search and select a city; inspect all five pages in both orientations; change/save settings and reload; leave rotation running; interrupt Wi-Fi and restore it. Confirm 24-hour time, US units, and automatic refresh. Test Safari and Add to Home Screen mode separately.
 
 If an endpoint fails certificate validation, do not use HTTP or disable validation. Reassess hosting/API delivery before calling the device supported.
+
+## Motion / connection-help update
+
+- 23 regression checks pass, including sunrise/noon/sunset positions, missing/polar data, clamping outside daylight, fades on/off and HTTPS diagnostic links.
+- ES5 syntax revalidated.
+- Browser inspection confirmed a real opacity transition during page navigation.
+- Added actionable connection guidance; the physical iPad's failure is not marked resolved without its diagnostic result.
