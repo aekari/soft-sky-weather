@@ -5,7 +5,7 @@ function row(title,message){var n=document.createElement('div'),h=document.creat
 function check(url,title,mode,next){
  var output=row(title,'Checking…'),x,finished=false,timer,started=Date.now();
  function validJSON(){try{JSON.parse(x.responseText);return 'PASS · readable JSON';}catch(e){return 'FAIL · response was not valid JSON';}}
- function done(message){if(finished){return;}finished=true;clearTimeout(timer);output.textContent=message+' ('+Math.round((Date.now()-started)/1000)+' seconds)';next(message.indexOf('PASS')===0);}
+ function done(message){if(finished){return;}finished=true;clearTimeout(timer);output.className=message.indexOf('PASS')===0?'diagnostic-pass':'diagnostic-fail';output.textContent=message+' ('+Math.round((Date.now()-started)/1000)+' seconds)';next(message.indexOf('PASS')===0);}
  try{
   x=new XMLHttpRequest();
   if(mode){url+='&_softsky='+Date.now();}

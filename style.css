@@ -27,3 +27,7 @@ main{min-height:calc(100vh - 235px)}
 .connection-link{display:block;padding:14px 0;color:#294c70;font-weight:600}
 @media(prefers-reduced-motion:reduce){#main{transition:none}#main.page-arriving,.animate .hero-cloud{-webkit-animation:none;animation:none}}
 .diagnostic-row{display:block}.diagnostic-row p{font-size:13px;margin:8px 0;word-wrap:break-word}
+
+.diagnostic-row .diagnostic-pass,.diagnostic-row .diagnostic-fail{padding:10px 12px;border-radius:8px;font-weight:600;border-left:4px solid}
+.diagnostic-row .diagnostic-pass{color:#17613b;background:#e7f4eb;border-color:#21834e}
+.diagnostic-row .diagnostic-fail{color:#a02832;background:#fbe9e9;border-color:#bd3542}
