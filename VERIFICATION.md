@@ -24,3 +24,10 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - ES5 syntax revalidated.
 - Browser inspection confirmed a real opacity transition during page navigation.
 - Added actionable connection guidance; the physical iPad's failure is not marked resolved without its diagnostic result.
+
+## Independent clock and request recovery
+
+- 29 regression checks pass, including clock rendering without weather, US daylight-saving changes, fractional-hour offsets, unknown/expired timezone rules, transient retry, timeout exhaustion and duplicate legacy XHR completion events.
+- Both application and bundled timezone scripts parse as ES5.
+- Verified the geocoding ID lookup returns an IANA timezone for saved-city migration.
+- Both APIs returned Access-Control-Allow-Origin: * during inspection. The user's direct city-search test loaded JSON, so a certificate failure on that host is not established. Forecast-host testing on the physical iPad remains pending.

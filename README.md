@@ -46,3 +46,9 @@ Page changes fade out for 180 ms and fade in for 320 ms. Turn this off with **Fa
 WPA Wi-Fi encryption and the browser's HTTPS certificate trust are separate. A visible page with failed API requests does not prove Wi-Fi is broken. Both Open-Meteo endpoints presented Let's Encrypt certificates when checked. [Let's Encrypt lists iOS 10+ for ISRG Root X1 trust](https://letsencrypt.org/docs/certificate-compatibility/), so stock iOS 9 may reject these services. This cannot be repaired by ES5 JavaScript or an animation change.
 
 Settings → Connection help includes two HTTPS tests with neutral example coordinates. Confirm the device's date/time, and report the exact Safari error without bypassing it. If certificate trust is the cause, options are a carefully verified official root-certificate update on the device or an HTTPS relay with a chain it already trusts. Neither has been configured by this site. No HTTP fallback, public third-party proxy, or certificate-validation bypass is used.
+
+## Clock and request resilience
+
+City-local time no longer depends on a successful forecast. City search supplies an IANA timezone; older saved cities recover it through the geocoding ID lookup. A bundled 25 KB offset table supports 597 public timezone identifiers for 2025–2035, including daylight-saving transitions, without Intl or a third-party time service. Rebuild periodically with `python3 tools/build-timezones.py` when governments change timezone rules. Outside that range, a successful forecast's offset is used; unknown offsets are not presented as accurate city time.
+
+Requests now allow 45 seconds and retry network/timeout/server failures once. Both load and readystatechange completion paths are supported with a once-only callback. Errors distinguish HTTP errors, timeouts, unreadable responses and generic network/browser-security failures; the app cannot diagnose a certificate error from XMLHttpRequest alone.
