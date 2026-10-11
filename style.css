@@ -8,9 +8,9 @@ main{min-height:calc(100vh - 235px)}
 @media(orientation:landscape) and (max-height:700px){main{min-height:calc(100vh - 210px)}}
 
 /* Opacity and transforms only: compatible with old WebKit and inexpensive. */
-#main{opacity:1;-webkit-transition:opacity .18s ease;transition:opacity .18s ease}
+#main{opacity:1;-webkit-transition:opacity .22s ease;transition:opacity .22s ease;-webkit-backface-visibility:hidden;backface-visibility:hidden}
 #main.page-leaving{opacity:0}
-#main.page-arriving{-webkit-animation:page-appear .32s ease both;animation:page-appear .32s ease both}
+#main.page-arriving{opacity:1}
 @-webkit-keyframes page-appear{from{opacity:0}to{opacity:1}}
 @keyframes page-appear{from{opacity:0}to{opacity:1}}
 .sky-scene{overflow:hidden;pointer-events:none}
@@ -31,3 +31,44 @@ main{min-height:calc(100vh - 235px)}
 .diagnostic-row .diagnostic-pass,.diagnostic-row .diagnostic-fail{padding:10px 12px;border-radius:8px;font-weight:600;border-left:4px solid}
 .diagnostic-row .diagnostic-pass{color:#17613b;background:#e7f4eb;border-color:#21834e}
 .diagnostic-row .diagnostic-fail{color:#a02832;background:#fbe9e9;border-color:#bd3542}
+
+/* A bounded scroll container works in older iPad Safari as well as landscape. */
+.overlay{height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch}
+.overlay .dialog{max-height:calc(100vh - 50px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:44px}
+/* Large mode reorganizes information, leaving room for readable labels. */
+.large #city-name{font-size:36px}.large #city-region{font-size:13px;letter-spacing:1px}
+.large #clock{font-size:42px}.large #date{font-size:13px;letter-spacing:.5px}
+.large .page-heading{font-size:36px}.large .subtitle{font-size:18px;margin-bottom:16px}
+.large .temperature{font-size:164px}.large .condition{font-size:36px}.large .eyebrow{font-size:14px}
+.large .metric strong{font-size:34px}.large .metric .label,.large .detail .label{font-size:18px;line-height:1.25}
+.large .hour-grid{display:block;font-size:0;margin:0 -5px;width:auto}
+.large .hour{display:inline-block;vertical-align:top;width:calc(33.333% - 10px);margin:5px;padding:12px 8px;font-size:24px}
+.large .hour img{display:inline-block;width:48px;height:44px;margin:6px 10px 0 0;vertical-align:middle}
+.large .hour strong{display:inline-block;font-size:36px;margin:0;vertical-align:middle}
+.large .hour>span:first-child{display:block;font-weight:600}
+.large .hour .rain{font-size:18px;margin:6px 0}.large .hour .muted{font-size:17px}
+.large .hour-pages{margin:8px 0}.large .hour-pages button{font-size:18px;min-width:80px}
+.large main{padding-top:20px;padding-bottom:10px}
+.large .forecast td{font-size:26px;padding:7px 12px}.large .forecast .rain{font-size:23px}
+.large .forecast .condition-name{font-size:18px}.large .forecast img{width:40px;height:36px}
+.large .detail{padding:16px;min-height:105px}.large .detail strong{font-size:34px;display:block;margin-top:8px}
+.large .sun-times{font-size:22px}.large .sun-times strong{font-size:36px}
+.large .settings-button{font-size:18px}.large #page-label{font-size:12px;letter-spacing:.5px}
+@media(orientation:portrait){
+ .large .hero-copy{width:60%}.large .hero-art{width:40%}
+ .large .metrics{display:block;font-size:0;width:auto;margin:0 -5px}
+ .large .metric{display:inline-block;width:calc(50% - 10px);margin:5px;min-height:105px;font-size:18px}
+ .large .detail{width:calc(50% - 12px)}
+ .large .forecast .condition-name{display:none}
+}
+@media(max-height:700px) and (orientation:landscape){
+ .large .temperature{font-size:130px}.large .condition{margin-bottom:12px}
+ .large .hour{padding:7px}.large .detail{padding:10px;min-height:90px}
+ .large .forecast td{padding:5px 10px}.large .page-heading{font-size:32px}
+}
+@media(max-width:600px){
+ .overlay .dialog{max-height:calc(100vh - 24px)}
+ .large #city-name{font-size:28px}.large #clock{font-size:32px}
+ .large .hour{width:calc(50% - 10px)}.large .forecast td{font-size:20px;padding:8px 5px}
+ .large .metric strong,.large .detail strong{font-size:28px}.large .settings-button{font-size:16px}
+}

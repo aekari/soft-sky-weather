@@ -11,9 +11,9 @@
 <title>Soft Sky · Weather</title>
 <link rel="icon" href="assets/sun.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/touch-icon.png">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=8">
 <script defer src="timezones.js?v=4"></script>
-<script defer src="app.js?v=7"></script>
+<script defer src="app.js?v=8"></script>
 </head>
 <body>
 <div id="app" class="sky">
@@ -21,7 +21,7 @@
  <header><button id="city-button" class="city-button" aria-label="Choose a city"><span id="city-name">Soft Sky</span><span id="city-region">A LITTLE WINDOW INTO THE WEATHER</span></button><div class="clock"><span id="clock">--:--</span><span id="date">WELCOME HOME</span></div></header>
  <main id="main"><section class="welcome"><img src="assets/partly.svg" alt="" class="welcome-art"><p class="eyebrow">YOUR DAILY DOSE OF SKY</p><h1>A little weather.<br>A little wonder.</h1><p>Find a city. Settle in. Watch the sky.</p><button id="start" class="primary">Choose your city <span aria-hidden="true">↗</span></button><a class="connection-link" href="diagnostics.html?v=7">Connection check</a></section></main>
  <div id="status" role="status" aria-live="polite"></div>
- <footer><div class="navigation"><button id="previous" aria-label="Previous page">‹</button><div id="dots"></div><button id="next" aria-label="Next page">›</button><button id="pause" aria-label="Pause rotation">Ⅱ</button><span id="page-label">WELCOME</span></div><button id="settings-button" class="settings-button" aria-label="Open settings">Settings <span aria-hidden="true">⚙</span></button></footer>
+ <footer><div id="navigation" class="navigation" hidden><button id="previous" aria-label="Previous page">‹</button><div id="dots"></div><button id="next" aria-label="Next page">›</button><button id="pause" aria-label="Pause rotation">Ⅱ</button><span id="page-label">WELCOME</span></div><button id="settings-button" class="settings-button" aria-label="Open settings">Settings <span aria-hidden="true">⚙</span></button></footer>
  <div class="credit">Weather by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> · <span id="updated">Made for slow moments</span></div>
 </div>
 <div id="overlay" class="overlay" hidden><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">Make it yours</h2><button id="close" aria-label="Close dialog">×</button></div><div id="dialog-content"></div></section></div>

@@ -41,3 +41,12 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Diagnostic version 5 compares ordinary, uncached, explicit JSON, plain-text decoding, and full-forecast requests. It validates JSON and summarizes passing checks. No personal settings are accessed.
 - 30 regression checks pass; application and diagnostics parse as ES5. The server accepts the fresh-request parameter with HTTP 200 and the intended CORS headers.
 - No relay or additional hosting has been deployed. Physical-device verification remains required.
+
+## Display refinement
+
+- Replaced competing fade animation/transition with one opacity transition; content replacement remains hidden until layout settles.
+- Large mode uses a 3-by-2 hourly layout, two-column portrait details and metrics, and larger city/clock/forecast typography. Verified portrait Now/Conditions and landscape hourly/week/sun layouts in 768x1024 and 1024x768 browser viewports.
+- Settings dialog is height-bounded with native touch scrolling. Browser verification reached the reset control at the bottom.
+- Automatic sky colors interpolate through dawn, daytime, afternoon, sunset and night using city sunrise/sunset, updated every 10 seconds. Forced light/dark settings remain supported.
+- Navigation is hidden before city selection. 32 regression checks pass, including navigation visibility and solar color interpolation; application parses as ES5.
+- Physical iOS 9 Safari confirmation is still needed for compositor flicker and touch scrolling.
