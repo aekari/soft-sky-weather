@@ -58,3 +58,11 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Browser checks at 1024x768 and 768x1024 verified large Now/hourly/Sun & sky layouts, selected-scene image loading, settings scrolling, and the October fallback from Christmas to Mountain.
 - Background layers remain mounted across page changes. Day/night cloud layers use separate opacity weights to avoid an opaque night layer showing behind daytime clouds.
 - Physical Safari iOS 9 testing is still required for device memory limits, SVG image clipping and animation smoothness. Modern viewport checks are not an iOS emulator.
+
+## Motion and settings corrections
+
+- 40 regression checks cover default-order migration/custom-order retention, December-only choices and exclusive celestial selection. ES5 parsing remains required.
+- Browser checks confirmed nighttime sun hidden/moon visible, automatic cloud transforms changing over time, and no Christmas or drifting toggle in October settings.
+- Direct coordinate click on an in-view reorder arrow preserved the dialog scroll offset at 461 px; focus remained on the moved control.
+- During crossfade, browser inspection measured incoming opacity 0.152 and outgoing opacity 0.848 simultaneously. Outgoing content had no duplicate IDs and is removed after the dissolve.
+- Physical iOS 9 animation smoothness remains a device-side verification step.

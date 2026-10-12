@@ -119,3 +119,17 @@ footer{display:block}footer:after{content:"";display:table;clear:both}
 .cloud-far img,.cloud-front img{opacity:0}
 .sun-panel{background:rgba(247,250,253,.84)}.night .sun-panel{background:rgba(20,37,64,.88)}
 @media(max-width:600px){.navigation{padding:2px 0}}
+
+/* Mutually exclusive celestial layers, including throughout twilight. */
+.scene-sun,.scene-moon-wrap{-webkit-transition:none;transition:none}
+/* Continuous, visible drift without a settings toggle. */
+.animate .cloud-front{-webkit-animation:scene-drift 42s linear infinite alternate;animation:scene-drift 42s linear infinite alternate}
+@-webkit-keyframes scene-drift{from{-webkit-transform:translateX(-65px)}to{-webkit-transform:translateX(65px)}}
+@keyframes scene-drift{from{transform:translateX(-65px)}to{transform:translateX(65px)}}
+#main{-webkit-transition:opacity .8s ease-in-out;transition:opacity .8s ease-in-out}
+#main.page-preparing{opacity:0;-webkit-transition:none;transition:none}
+#main.page-arriving{opacity:1}
+main.page-outgoing{position:absolute!important;margin:0;opacity:1;pointer-events:none;z-index:2;-webkit-transition:opacity .8s ease-in-out;transition:opacity .8s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+@media(prefers-reduced-motion:reduce){#main,main.page-outgoing{-webkit-transition:none;transition:none}.animate .cloud-front{-webkit-animation:none;animation:none}}
+
+.overlay,.dialog{overflow-anchor:none}
