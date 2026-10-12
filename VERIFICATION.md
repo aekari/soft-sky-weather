@@ -66,3 +66,11 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Direct coordinate click on an in-view reorder arrow preserved the dialog scroll offset at 461 px; focus remained on the moved control.
 - During crossfade, browser inspection measured incoming opacity 0.152 and outgoing opacity 0.848 simultaneously. Outgoing content had no duplicate IDs and is removed after the dissolve.
 - Physical iOS 9 animation smoothness remains a device-side verification step.
+
+## Moon page and direct page navigation
+
+- 45 checks pass, including hourly entry reset and subgroup buttons, six-page rendering, preserved custom ordering, Moon disabled by default and opt-in persistence, known tropical signs at 2024 new/full moons, upcoming phase dates within six hours of known events, and city-day filtering for moonrise/set.
+- Moon facts use bundled local astronomy calculations with no new network origins. Zodiac sign is labeled tropical and approximate, with a boundary note.
+- Portrait and landscape browser review checks large-text Moon content and navigation fit; physical iOS 9 remains the final device check.
+
+- Upcoming event estimates remain stable across minute-to-minute refreshes; the search uses illumination extrema rather than assuming signed lunar phase is monotonic.

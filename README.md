@@ -6,7 +6,7 @@ A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTM
 
 Open the HTTPS site, choose a city, then use Settings to customize the display. All time uses a 24-hour clock in the selected city's time zone. All measurements use US units. Saved cities and settings are browser-local.
 
-Five pages: Now, Next 24 hours (four groups of six), Seven days, Conditions, and Sun & sky. Rotation completes all enabled pages, then optionally moves to the next saved city. Opening search or settings suspends rotation. Touch the pause button to stay on a page.
+Five default pages: Now, Conditions, Sun & sky, Seven days, and Next 24 hours. Moon is an optional sixth page, disabled until enabled in Settings → Pages. Look ahead opens at hours 1–6; the four buttons beneath it select later six-hour groups. Rotation completes all enabled pages, then optionally moves to the next saved city. Opening search or settings suspends rotation. Touch the pause button to stay on a page.
 
 ## iPad setup
 
@@ -59,4 +59,12 @@ City-local time no longer depends on a successful forecast. City search supplies
 
 Requests now allow 45 seconds and retry network/timeout/server failures once. Both load and readystatechange completion paths are supported with a once-only callback. Errors distinguish HTTP errors, timeouts, unreadable responses and generic network/browser-security failures; the app cannot diagnose a certificate error from XMLHttpRequest alone.
 
-Default page order: Now → Conditions → Sun & sky → Seven days → Next 24 hours. Existing untouched defaults migrate to this order; custom arrangements remain saved. Reorder controls move existing settings rows in place and preserve scroll position. The sun and moon are mutually exclusive at the sunrise/sunset threshold, including twilight. Forced light/dark appearance uses the corresponding celestial body.
+Default page order: Now → Conditions → Sun & sky → Seven days → Next 24 hours. The optional Moon entry is placed after Sun & sky and starts disabled. Existing untouched defaults migrate to this order; custom arrangements remain saved. Reorder controls move existing settings rows in place and preserve scroll position. The sun and moon are mutually exclusive at the sunrise/sunset threshold, including twilight. Forced light/dark appearance uses the corresponding celestial body.
+
+## Moon page
+
+The Moon page shows phase, illuminated percentage, approximate tropical zodiac sign, city-local moonrise/set, and estimated next full/new moon times. Existing page lists gain a disabled Moon entry after Sun & sky; enabled/disabled settings and custom order remain supported. Moon information refreshes once a minute while that page is visible.
+
+The tropical sign divides approximate geocentric ecliptic longitude into twelve equal 30-degree sectors; it is not an astronomical constellation or a sidereal zodiac. Longitude uses the same compact lunar model as bundled SunCalc. Within two degrees of a boundary, the UI notes a nearby sign change. Event times and signs are estimates, not precision ephemerides. Moonrise/set are collected across adjacent UTC days and filtered to the selected city's calendar date. Missing rise/set events display “No rise today” or “No set today.” Upcoming phases are bracketed over the next 35 days and refined numerically as extrema of SunCalc's illuminated fraction.
+
+Bottom arrows and automatic rotation always advance to the next enabled page. They never step through hourly subgroups, and every entry to Look ahead starts at 1–6 hours.

@@ -133,3 +133,12 @@ main.page-outgoing{position:absolute!important;margin:0;opacity:1;pointer-events
 @media(prefers-reduced-motion:reduce){#main,main.page-outgoing{-webkit-transition:none;transition:none}.animate .cloud-front{-webkit-animation:none;animation:none}}
 
 .overlay,.dialog{overflow-anchor:none}
+
+.moon-summary{display:table;width:100%;margin:0 0 20px;background:rgba(247,250,253,.88);border-radius:24px;padding:12px 22px}
+.night .moon-summary{background:rgba(20,37,64,.9)}.moon-portrait{position:relative;display:table-cell;width:35%;height:235px;vertical-align:middle}.moon-portrait svg{position:relative;display:block;width:100%;height:220px}.moon-page-haze{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;opacity:.65}
+.moon-copy{display:table-cell;vertical-align:middle;padding:12px 18px}.moon-phase-title{font-size:34px;letter-spacing:-.8px;margin:0 0 10px}.moon-illumination{font-size:25px}.moon-sign{font-size:27px;font-weight:600;margin-top:20px}.moon-system{display:block;font-size:13px;margin-top:6px;line-height:1.5}
+.moon-facts{display:table;width:100%;border-spacing:8px 0}.moon-facts .metric{width:25%;padding:16px 8px}.moon-facts .metric strong{font-size:25px}.moon-fact-extra{display:block;font-size:17px;margin-top:6px}.moon-note{font-size:13px;margin:10px 8px}.large .moon-phase-title{font-size:38px}.large .moon-illumination{font-size:28px}.large .moon-sign{font-size:31px}.large .moon-system{font-size:15px}
+@media(orientation:portrait){.moon-summary{display:block;text-align:center;padding:14px 20px}.moon-portrait{display:block;width:240px;height:225px;margin:auto}.moon-copy{display:block;padding:0 0 12px}.moon-sign{margin-top:12px}.moon-facts{display:block;font-size:0}.moon-facts .metric,.large .moon-facts .metric{width:calc(50% - 10px);margin:5px;min-height:115px;vertical-align:top}.moon-phase-title{font-size:32px}}
+@media(max-width:600px){#dots button{width:30px;min-width:30px}#dots button:after{left:11px}#dots button.active:after{left:10px}.moon-copy{padding:0}.moon-phase-title,.large .moon-phase-title{font-size:28px}.moon-sign,.large .moon-sign{font-size:25px}.moon-facts .metric strong{font-size:21px}}
+@media(orientation:landscape){.moon-portrait{height:220px}.moon-portrait svg{height:205px}}
+@media(orientation:portrait){.moon-portrait{height:165px;width:200px}.moon-portrait svg{height:165px}}
