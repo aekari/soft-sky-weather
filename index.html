@@ -11,13 +11,23 @@
 <title>Soft Sky · Weather</title>
 <link rel="icon" href="assets/sun.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/touch-icon.png">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=10">
 <script defer src="timezones.js?v=4"></script>
-<script defer src="app.js?v=8"></script>
+<script defer src="assets/vendor/suncalc.js?v=10"></script>
+<script defer src="app.js?v=10"></script>
 </head>
 <body>
 <div id="app" class="sky">
- <div class="scenery" aria-hidden="true"><div class="haze"></div><div class="hill hill-back"></div><div class="hill hill-front"></div></div>
+ <div class="scenery" aria-hidden="true">
+  <img id="scene-night" class="scene-plate" alt=""><img id="scene-sunset" class="scene-plate" alt=""><img id="scene-day" class="scene-plate" alt="">
+  <img id="scene-stars" class="scene-stars" src="assets/layers/stars.png" alt="">
+  <img id="scene-sun" class="scene-sun" src="assets/layers/sun-glow.png" alt="">
+  <div id="scene-moon-wrap" class="scene-moon-wrap"><img class="moon-haze" src="assets/layers/moon-halo.png" alt=""><div id="scene-moon" class="scene-moon"></div></div>
+  <div id="scene-clouds" class="scene-clouds">
+   <div class="cloud-far"><img id="cloud-far-night" src="assets/layers/wisps-night.png" alt=""><img id="cloud-far-sunset" src="assets/layers/wisps-sunset.png" alt=""><img id="cloud-far-day" src="assets/layers/wisps-day.png" alt=""></div>
+   <div class="cloud-front"><img id="cloud-front-night" src="assets/layers/puffs-night.png" alt=""><img id="cloud-front-sunset" src="assets/layers/puffs-sunset.png" alt=""><img id="cloud-front-day" src="assets/layers/puffs-day.png" alt=""></div>
+  </div><div class="scene-veil"></div>
+ </div>
  <header><button id="city-button" class="city-button" aria-label="Choose a city"><span id="city-name">Soft Sky</span><span id="city-region">A LITTLE WINDOW INTO THE WEATHER</span></button><div class="clock"><span id="clock">--:--</span><span id="date">WELCOME HOME</span></div></header>
  <main id="main"><section class="welcome"><img src="assets/partly.svg" alt="" class="welcome-art"><p class="eyebrow">YOUR DAILY DOSE OF SKY</p><h1>A little weather.<br>A little wonder.</h1><p>Find a city. Settle in. Watch the sky.</p><button id="start" class="primary">Choose your city <span aria-hidden="true">↗</span></button><a class="connection-link" href="diagnostics.html?v=7">Connection check</a></section></main>
  <div id="status" role="status" aria-live="polite"></div>

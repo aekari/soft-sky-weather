@@ -72,3 +72,50 @@ main{min-height:calc(100vh - 235px)}
  .large .hour{width:calc(50% - 10px)}.large .forecast td{font-size:20px;padding:8px 5px}
  .large .metric strong,.large .detail strong{font-size:28px}.large .settings-button{font-size:16px}
 }
+
+/* Illustrated scenery remains mounted when forecast pages change. */
+.scenery:after{display:none}.scene-plate{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.scene-plate,#scene-stars,.scene-sun,.scene-moon-wrap,.cloud-far img,.cloud-front img{-webkit-transition:opacity 10s linear;transition:opacity 10s linear}
+.scene-stars{position:absolute;top:0;left:0;width:100%;height:80%;object-fit:cover;opacity:0}
+.scene-sun{position:absolute;width:310px;height:310px;margin:-155px;left:70%;top:27%;opacity:0}
+.scene-moon-wrap{position:absolute;width:270px;height:270px;right:10%;top:13%;opacity:0}
+.moon-haze{position:absolute;left:-25%;top:-25%;width:150%;height:150%}.scene-moon{position:absolute;top:0;left:0;width:100%;height:100%}.scene-moon svg{width:100%;height:100%}
+.scene-clouds{position:absolute;left:0;top:0;right:0;height:65%;-webkit-transition:opacity 10s linear;transition:opacity 10s linear}
+.cloud-far,.cloud-front{position:absolute}.cloud-far{left:20%;top:9%;width:65%;height:45%;opacity:.48}.cloud-front{right:3%;top:28%;width:40%;height:55%}
+.cloud-far img,.cloud-front img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain}
+.animate .cloud-front{-webkit-animation:scene-drift 95s ease-in-out infinite alternate;animation:scene-drift 95s ease-in-out infinite alternate}
+@-webkit-keyframes scene-drift{from{-webkit-transform:translateX(-25px)}to{-webkit-transform:translateX(35px)}}
+@keyframes scene-drift{from{transform:translateX(-25px)}to{transform:translateX(35px)}}
+.scene-veil{position:absolute;left:0;top:0;right:0;bottom:0;background:linear-gradient(90deg,rgba(235,244,249,.35),rgba(235,244,249,0) 65%)}
+.night .scene-veil{background:linear-gradient(90deg,rgba(10,22,45,.28),rgba(10,22,45,0) 65%)}
+.sky header,.sky footer{text-shadow:0 1px 10px rgba(255,255,255,.35)}.sky.night header,.sky.night footer{text-shadow:0 1px 10px rgba(5,15,30,.5)}
+.hero-copy{padding-bottom:12px}.temperature{font-weight:500;font-size:152px}.eyebrow{display:none}.condition{margin-top:10px}
+.condition-scene{overflow:visible}.condition-weather{width:75%;height:80%;position:absolute;right:0;top:10%}
+.metric,.hour,.detail,.forecast td{background:rgba(247,250,253,.88)}.night .metric,.night .hour,.night .detail,.night .forecast td{background:rgba(20,37,64,.9)}
+.subtitle{display:none}.page-heading{margin-bottom:20px}
+.settings-button{font-size:17px;padding:4px 16px;background:rgba(247,250,253,.86);border-radius:18px;min-height:52px}.settings-button span{font-size:30px}.night .settings-button{background:rgba(20,37,64,.9)}
+#previous,#next,#pause{min-width:48px;min-height:48px}#dots button{min-width:44px;width:44px;min-height:48px}#dots button:after{left:18px;top:20px}#dots button.active:after{left:17px;top:19px}
+.navigation{white-space:nowrap}#page-label{display:none}.credit{display:inline-block;padding:6px 12px;border-radius:12px;background:rgba(247,250,253,.85)}.night .credit{background:rgba(20,37,64,.9)}
+#status:not(:empty){border-radius:10px}#status{font-size:14px}.moon-metric strong{font-size:22px}.moon-lit{display:block;font-size:15px;margin-top:6px}
+.dialog-heading button,.order-row button{min-width:48px;min-height:48px}.setting{font-size:17px}.setting select{min-height:48px}.section-title{font-size:14px}.note{font-size:14px}
+.large .moon-metric strong{font-size:26px}.large .moon-lit{font-size:18px}
+@media(orientation:portrait){
+ .scene-plate{width:134%;max-width:none;left:-17%}.scene-moon-wrap{right:12%;top:17%;width:240px;height:240px}.scene-sun{width:280px;height:280px;margin:-140px}.cloud-front{top:32%;width:55%}
+ .now{text-align:left;padding-top:245px}.hero-copy,.large .hero-copy{width:100%;padding-top:0}.hero-art,.large .hero-art{top:0;left:auto;right:0;width:50%;height:210px}
+ .temperature{font-size:146px}.large .temperature{font-size:164px}.metrics{text-align:center}.large .now{padding-top:220px}
+ .large .condition{margin-bottom:20px}
+}
+@media(orientation:landscape) and (max-height:800px){.large .temperature{font-size:150px}.large .metric strong{font-size:30px}.large .moon-metric strong{font-size:23px}.large .detail{min-height:95px}.large .sun-path{height:165px}}
+@media(max-width:600px){.sky{padding-left:18px;padding-right:18px}.settings-button,.large .settings-button{font-size:0;padding:4px 10px}.settings-button span{margin:0}#dots button{min-width:36px;width:36px}#dots button:after{left:14px}#dots button.active:after{left:13px}#previous,#next,#pause{min-width:40px}.scene-moon-wrap{width:200px;height:200px;right:5%}.now,.large .now{padding-top:180px}.large .temperature{font-size:134px}.large .condition{font-size:30px}.scene-sun{width:240px;height:240px;margin:-120px}}
+@media(prefers-reduced-motion:reduce){.animate .cloud-front{-webkit-animation:none;animation:none}}
+
+main{min-height:calc(100vh - 242px)}
+.cloud-front{width:46%;right:0;top:25%;height:65%}
+@media(orientation:portrait){.cloud-front{width:65%;top:28%;right:-5%}}
+
+footer{display:block}footer:after{content:"";display:table;clear:both}
+.navigation{display:inline-block;background:rgba(247,250,253,.88);border-radius:18px;padding:2px 8px;vertical-align:top}
+.night .navigation{background:rgba(20,37,64,.9)}.settings-button{display:block;float:right}
+.cloud-far img,.cloud-front img{opacity:0}
+.sun-panel{background:rgba(247,250,253,.84)}.night .sun-panel{background:rgba(20,37,64,.88)}
+@media(max-width:600px){.navigation{padding:2px 0}}

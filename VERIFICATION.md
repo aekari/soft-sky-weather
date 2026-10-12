@@ -50,3 +50,11 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Automatic sky colors interpolate through dawn, daytime, afternoon, sunset and night using city sunrise/sunset, updated every 10 seconds. Forced light/dark settings remain supported.
 - Navigation is hidden before city selection. 32 regression checks pass, including navigation visibility and solar color interpolation; application parses as ES5.
 - Physical iOS 9 Safari confirmation is still needed for compositor flicker and touch scrolling.
+
+## Illustrated scenery release
+
+- 36 logic checks pass, including December-only scenery, continuous normalized twilight weights, known new/full moon dates, and finite phase-mask outlines.
+- Application and bundled SunCalc parse as ES5. HTTPS API allowlist and CSP remain unchanged; no additional service or key is required.
+- Browser checks at 1024x768 and 768x1024 verified large Now/hourly/Sun & sky layouts, selected-scene image loading, settings scrolling, and the October fallback from Christmas to Mountain.
+- Background layers remain mounted across page changes. Day/night cloud layers use separate opacity weights to avoid an opaque night layer showing behind daytime clouds.
+- Physical Safari iOS 9 testing is still required for device memory limits, SVG image clipping and animation smoothness. Modern viewport checks are not an iOS emulator.

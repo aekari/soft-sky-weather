@@ -1,6 +1,6 @@
 # Soft Sky
 
-A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTML, CSS and ES5 JavaScript. No build step or runtime dependencies.
+A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
 
 ## Use
 
@@ -39,7 +39,13 @@ Publish the root of the main branch using GitHub Pages and enable Enforce HTTPS.
 
 ## Motion and daylight
 
-Page changes fade out for 180 ms and fade in for 320 ms. Turn this off with **Fade between pages**. **Drifting clouds** controls slow, transform-only cloud motion; an existing saved animation preference is preserved. New installations enable it. The sun's position updates every ten seconds from the city's sunrise/sunset, and the Sun & sky marker keeps moving even when rotation is paused. This is a decorative daylight-progress arc, not a true azimuth or elevation calculation. At night the illustration changes to a moon; missing or polar sunrise/sunset data use a static fallback.
+Page changes use a short opacity fade while the background remains mounted. Turn this off with **Fade between pages**. **Drifting clouds** controls slow, transform-only foreground motion; distant wisps stay still. Existing animation preferences are preserved; new installations default to no decorative motion.
+
+**Scenery** replaces accent palettes: Mountain forest, Tropical coast, City skyline, and Christmas. Christmas is active only during December in the selected city's local time; it falls back to Mountain forest otherwise. All four scenes have day, sunset and night plates, blended every ten seconds using calculated solar elevation. Automatic appearance handles polar day/night without requiring sunrise and sunset values. Always light/dark overrides remain available.
+
+The sun follows a decorative daylight-progress arc. The moon shows the current calculated illuminated fraction and waxing/waning phase; its sky placement is decorative, not a moonrise or azimuth prediction. Its orientation is mirrored between hemispheres, rather than modeling the exact local tilt. Sun & sky includes the phase name and illuminated percentage. These astronomical estimates run offline through bundled [SunCalc 1.9.0](https://github.com/mourner/suncalc/tree/v1.9.0), with its BSD license in `assets/vendor/SunCalc-LICENSE.txt`. They do not add an API connection.
+
+Stars, sun haze, moon haze, clouds and scenery are separate local PNG assets. Only the selected scenery's three background plates load; switching themes downloads the other scene as needed. First loading the illustrated art can take longer on an older connection. Transparent asset masters are supplied separately for reuse.
 
 ## iOS 9 connection troubleshooting
 
