@@ -74,3 +74,5 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Portrait and landscape browser review checks large-text Moon content and navigation fit; physical iOS 9 remains the final device check.
 
 - Upcoming event estimates remain stable across minute-to-minute refreshes; the search uses illumination extrema rather than assuming signed lunar phase is monotonic.
+
+- Look ahead uses 12-hour AM/PM labels, including noon, midnight and fractional city offsets; the main clock remains 24-hour. All 46 regression checks pass.

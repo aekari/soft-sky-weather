@@ -4,7 +4,7 @@ A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTM
 
 ## Use
 
-Open the HTTPS site, choose a city, then use Settings to customize the display. All time uses a 24-hour clock in the selected city's time zone. All measurements use US units. Saved cities and settings are browser-local.
+Open the HTTPS site, choose a city, then use Settings to customize the display. Times use the selected city’s time zone. Look ahead uses 12-hour AM/PM labels; the main clock and sun/moon event times use 24-hour time. All measurements use US units. Saved cities and settings are browser-local.
 
 Five default pages: Now, Conditions, Sun & sky, Seven days, and Next 24 hours. Moon is an optional sixth page, disabled until enabled in Settings → Pages. Look ahead opens at hours 1–6; the four buttons beneath it select later six-hour groups. Rotation completes all enabled pages, then optionally moves to the next saved city. Opening search or settings suspends rotation. Touch the pause button to stay on a page.
 
