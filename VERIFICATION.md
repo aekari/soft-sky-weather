@@ -83,3 +83,10 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Application still parses as ECMAScript 5.
 - All displayed clock/event times use AM/PM; forecast duration labels still describe hours ahead.
 - Apache 2.0 license and README badge added; bundled SunCalc BSD attribution retained.
+
+## Contrast, hierarchy, and celestial transitions
+
+- 48 synthetic checks pass, including Washington/Paris at the same UTC instant and Paris before sunrise.
+- ES5 parsing passes.
+- Browser preview verifies dark cloud icons on light forecast panels, smaller page headings, compact Moon facts, and the Sun page without lunar data.
+- Local contrast SVG variants preserve light icons for dark panels. Sun/moon changes fade out before the next body fades in.

@@ -45,7 +45,7 @@ Page changes dissolve simultaneously over 800 ms while the background remains mo
 
 **Scenery** replaces accent palettes: Mountain forest, Tropical coast, City skyline, and Christmas. Christmas is listed in Settings and active only during December in the selected city's local time; it falls back to Mountain forest otherwise. All four scenes have day, sunset and night plates, blended every ten seconds using calculated solar elevation. Automatic appearance handles polar day/night without requiring sunrise and sunset values. Always light/dark overrides remain available.
 
-The sun follows a decorative daylight-progress arc. The moon shows the current calculated illuminated fraction and waxing/waning phase; its sky placement is decorative, not a moonrise or azimuth prediction. Its orientation is mirrored between hemispheres, rather than modeling the exact local tilt. Sun & sky includes the phase name and illuminated percentage. These astronomical estimates run offline through bundled [SunCalc 1.9.0](https://github.com/mourner/suncalc/tree/v1.9.0), with its BSD license in `assets/vendor/SunCalc-LICENSE.txt`. They do not add an API connection.
+The sun follows a decorative daylight-progress arc. The moon shows the current calculated illuminated fraction and waxing/waning phase; its sky placement is decorative, not a moonrise or azimuth prediction. Its orientation is mirrored between hemispheres, rather than modeling the exact local tilt. Moon information appears only on the optional Moon page. These astronomical estimates run offline through bundled [SunCalc 1.9.0](https://github.com/mourner/suncalc/tree/v1.9.0), with its BSD license in `assets/vendor/SunCalc-LICENSE.txt`. They do not add an API connection.
 
 Stars, sun haze, moon haze, clouds and scenery are separate local PNG assets. Only the selected scenery's three background plates load; switching themes downloads the other scene as needed. First loading the illustrated art can take longer on an older connection. Transparent asset masters are supplied separately for reuse.
 
@@ -65,12 +65,14 @@ Default page order: Now → Conditions → Sun & sky → Seven days → Next 24 
 
 ## Moon page
 
-The Moon page shows phase, illuminated percentage, approximate tropical zodiac sign, city-local moonrise/set, and estimated next full/new moon times. Existing page lists gain a disabled Moon entry after Sun & sky; enabled/disabled settings and custom order remain supported. Moon information refreshes once a minute while that page is visible.
+The Moon page shows phase, illuminated percentage, approximate tropical zodiac sign, and estimated next full/new moon times. Illumination and zodiac sign appear in compact fact panels. Existing page lists gain a disabled Moon entry after Sun & sky; enabled/disabled settings and custom order remain supported. Moon information refreshes once a minute while that page is visible.
 
-The tropical sign divides approximate geocentric ecliptic longitude into twelve equal 30-degree sectors; it is not an astronomical constellation or a sidereal zodiac. Longitude uses the same compact lunar model as bundled SunCalc. Within two degrees of a boundary, the UI notes a nearby sign change. Event times and signs are estimates, not precision ephemerides. Moonrise/set are collected across adjacent UTC days and filtered to the selected city's calendar date. Missing rise/set events display “No rise today” or “No set today.” Upcoming phases are bracketed over the next 35 days and refined numerically as extrema of SunCalc's illuminated fraction.
+The tropical sign divides approximate geocentric ecliptic longitude into twelve equal 30-degree sectors; it is not an astronomical constellation or a sidereal zodiac. Longitude uses the same compact lunar model as bundled SunCalc. Within two degrees of a boundary, the UI notes a nearby sign change. Event times and signs are estimates, not precision ephemerides. Upcoming phases are bracketed over the next 35 days and refined numerically as extrema of SunCalc's illuminated fraction.
 
 Bottom arrows and automatic rotation always advance to the next enabled page. They never step through hourly subgroups, and every entry to Look ahead starts at 1–6 hours.
 
 ## License
 
 Copyright © 2026 Soft Sky contributors. Soft Sky is released under the [Apache License 2.0](LICENSE). Bundled SunCalc retains its [BSD license](assets/vendor/SunCalc-LICENSE.txt); weather and geocoding data retain the licenses listed above.
+
+Celestial visibility follows the selected city’s coordinates and current solar elevation, not the hour alone. Switching between day and night cities gently fades out the old celestial body before showing the new one. Paris at 7 AM may still be before sunrise in autumn. Forced light/dark appearance remains an explicit override.
