@@ -1,6 +1,6 @@
 # Soft Sky
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
 
@@ -73,4 +73,4 @@ Bottom arrows and automatic rotation always advance to the next enabled page. Th
 
 ## License
 
-Soft Sky is released under the [MIT License](LICENSE). Bundled SunCalc retains its [BSD license](assets/vendor/SunCalc-LICENSE.txt); weather and geocoding data retain the licenses listed above.
+Copyright © 2026 Soft Sky contributors. Soft Sky is released under the [Apache License 2.0](LICENSE). Bundled SunCalc retains its [BSD license](assets/vendor/SunCalc-LICENSE.txt); weather and geocoding data retain the licenses listed above.

@@ -82,4 +82,4 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - All 47 synthetic checks pass, including noon/midnight, fractional city offsets, the corner clock, and US-unit requests.
 - Application still parses as ECMAScript 5.
 - All displayed clock/event times use AM/PM; forecast duration labels still describe hours ahead.
-- MIT license and README badge added; bundled SunCalc BSD attribution retained.
+- Apache 2.0 license and README badge added; bundled SunCalc BSD attribution retained.
