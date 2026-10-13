@@ -8,7 +8,7 @@ A quiet, illustrated weather display for older hardware, specifically tailored t
 
 ## Use
 
-Open the HTTPS site, choose a city, then use Settings to customize the display. Times use the selected city’s time zone. All clocks and event times use 12-hour AM/PM. All measurements default to US units: °F, mph, inches, miles, and inHg. Saved cities and settings are browser-local.
+Open the HTTPS site to see Washington, DC by default. Choose another city or use Settings to customize the display. Existing saved city choices are preserved. Times use the selected city’s time zone. All clocks and event times use 12-hour AM/PM. All measurements default to US units: °F, mph, inches, miles, and inHg. Saved cities and settings are browser-local.
 
 Five default pages: Now, Conditions, Sun & sky, Seven days, and Next 24 hours. Moon is an optional sixth page, disabled until enabled in Settings → Pages. Look ahead opens at hours 1–6; the four buttons beneath it select later six-hour groups. Rotation completes all enabled pages, then optionally moves to the next saved city. Opening search or settings suspends rotation. Touch the pause button to stay on a page.
 
