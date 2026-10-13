@@ -76,3 +76,10 @@ If an endpoint fails certificate validation, do not use HTTP or disable validati
 - Upcoming event estimates remain stable across minute-to-minute refreshes; the search uses illumination extrema rather than assuming signed lunar phase is monotonic.
 
 - Look ahead uses 12-hour AM/PM labels, including noon, midnight and fractional city offsets; the main clock remains 24-hour. All 46 regression checks pass.
+
+## 12-hour time and licensing update
+
+- All 47 synthetic checks pass, including noon/midnight, fractional city offsets, the corner clock, and US-unit requests.
+- Application still parses as ECMAScript 5.
+- All displayed clock/event times use AM/PM; forecast duration labels still describe hours ahead.
+- MIT license and README badge added; bundled SunCalc BSD attribution retained.

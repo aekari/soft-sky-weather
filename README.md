@@ -1,10 +1,12 @@
 # Soft Sky
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
 
 ## Use
 
-Open the HTTPS site, choose a city, then use Settings to customize the display. Times use the selected city’s time zone. Look ahead uses 12-hour AM/PM labels; the main clock and sun/moon event times use 24-hour time. All measurements use US units. Saved cities and settings are browser-local.
+Open the HTTPS site, choose a city, then use Settings to customize the display. Times use the selected city’s time zone. All clocks and event times use 12-hour AM/PM. All measurements default to US units: °F, mph, inches, miles, and inHg. Saved cities and settings are browser-local.
 
 Five default pages: Now, Conditions, Sun & sky, Seven days, and Next 24 hours. Moon is an optional sixth page, disabled until enabled in Settings → Pages. Look ahead opens at hours 1–6; the four buttons beneath it select later six-hour groups. Rotation completes all enabled pages, then optionally moves to the next saved city. Opening search or settings suspends rotation. Touch the pause button to stay on a page.
 
@@ -68,3 +70,7 @@ The Moon page shows phase, illuminated percentage, approximate tropical zodiac s
 The tropical sign divides approximate geocentric ecliptic longitude into twelve equal 30-degree sectors; it is not an astronomical constellation or a sidereal zodiac. Longitude uses the same compact lunar model as bundled SunCalc. Within two degrees of a boundary, the UI notes a nearby sign change. Event times and signs are estimates, not precision ephemerides. Moonrise/set are collected across adjacent UTC days and filtered to the selected city's calendar date. Missing rise/set events display “No rise today” or “No set today.” Upcoming phases are bracketed over the next 35 days and refined numerically as extrema of SunCalc's illuminated fraction.
 
 Bottom arrows and automatic rotation always advance to the next enabled page. They never step through hourly subgroups, and every entry to Look ahead starts at 1–6 hours.
+
+## License
+
+Soft Sky is released under the [MIT License](LICENSE). Bundled SunCalc retains its [BSD license](assets/vendor/SunCalc-LICENSE.txt); weather and geocoding data retain the licenses listed above.
