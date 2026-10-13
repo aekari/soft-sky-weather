@@ -2,6 +2,8 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
+**[Open the live weather display](https://aekari.github.io/soft-sky-weather/)**
+
 A quiet, illustrated weather display for older hardware, specifically tailored to Safari on iOS 9.3.5. Tested on a physical iPad running iOS 9.3.5 through user testing and feedback; compatibility with every older device or certificate configuration is not guaranteed. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
 
 ## Use
