@@ -2,7 +2,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-A quiet, illustrated weather display designed for Safari on iOS 9.3.5. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
+A quiet, illustrated weather display for older hardware, specifically tailored to Safari on iOS 9.3.5. Tested on a physical iPad running iOS 9.3.5 through user testing and feedback; compatibility with every older device or certificate configuration is not guaranteed. Plain HTML, CSS and ES5 JavaScript. No build step, framework, or external script service. Astronomy calculations are bundled locally.
 
 ## Use
 
@@ -53,7 +53,7 @@ Stars, sun haze, moon haze, clouds and scenery are separate local PNG assets. On
 
 WPA Wi-Fi encryption and the browser's HTTPS certificate trust are separate. A visible page with failed API requests does not prove Wi-Fi is broken. Both Open-Meteo endpoints presented Let's Encrypt certificates when checked. [Let's Encrypt lists iOS 10+ for ISRG Root X1 trust](https://letsencrypt.org/docs/certificate-compatibility/), so stock iOS 9 may reject these services. This cannot be repaired by ES5 JavaScript or an animation change.
 
-Settings → Connection help includes two HTTPS tests with neutral example coordinates. Confirm the device's date/time, and report the exact Safari error without bypassing it. If certificate trust is the cause, options are a carefully verified official root-certificate update on the device or an HTTPS relay with a chain it already trusts. Neither has been configured by this site. No HTTP fallback, public third-party proxy, or certificate-validation bypass is used.
+Settings → Connection help offers seven request tests and four direct HTTPS links with public example locations. Run the tests, open the links for failed requests, return using Safari’s Back button, and rerun the check. The page explains certificate warnings separately from app permissions; opening a link is diagnostic, not a guaranteed fix. Confirm the device's date/time, and report the exact Safari error without bypassing it. If certificate trust is the cause, options are a carefully verified official root-certificate update on the device or an HTTPS relay with a chain it already trusts. Neither has been configured by this site. No HTTP fallback, public third-party proxy, or certificate-validation bypass is used.
 
 ## Clock and request resilience
 

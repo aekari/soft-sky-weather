@@ -142,3 +142,14 @@ main.page-outgoing{position:absolute!important;margin:0;opacity:1;pointer-events
 @media(max-width:600px){#dots button{width:30px;min-width:30px}#dots button:after{left:11px}#dots button.active:after{left:10px}.moon-copy{padding:0}.moon-phase-title,.large .moon-phase-title{font-size:28px}.moon-sign,.large .moon-sign{font-size:25px}.moon-facts .metric strong{font-size:21px}}
 @media(orientation:landscape){.moon-portrait{height:220px}.moon-portrait svg{height:205px}}
 @media(orientation:portrait){.moon-portrait{height:165px;width:200px}.moon-portrait svg{height:165px}}
+
+/* Simple geometric controls avoid platform-specific emoji rendering. */
+#pause:before{content:"";display:inline-block;vertical-align:middle;height:16px;width:13px;border-left:4px solid currentColor;border-right:4px solid currentColor}
+#pause.rotation-play:before{height:0;width:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid currentColor;border-right:0;margin-left:3px}
+.diagnostic-page{padding:24px 16px;background:linear-gradient(155deg,#daeaf4,#f4eee3);min-height:100vh}
+.diagnostic-card{max-width:720px;min-height:0;padding:26px;overflow:visible}
+.diagnostic-card h1{margin-top:18px}.diagnostic-card h2{font-size:21px;letter-spacing:-.3px;margin:0 0 12px}.diagnostic-card h3{font-size:16px;margin:0 0 8px}
+.check-step{padding:24px 0;border-top:1px solid #dbe1e4;margin-top:20px}.check-step p{font-size:15px}
+.direct-links .connection-link{display:block;margin:8px 0;padding:14px 16px;background:#e6eef3;border-radius:12px;min-height:48px}
+.certificate-note{padding:18px;background:#f1e8d8;border-radius:14px;margin-top:20px}.certificate-note p{margin-bottom:0;font-size:14px}
+.back-link{display:inline-block;min-height:44px;padding:10px 0;color:inherit}.diagnostic-card .diagnostic-row{display:block}.diagnostic-row p{overflow-wrap:break-word;word-wrap:break-word}
